@@ -1,0 +1,10 @@
+[fit]
+logging_level = 'Verbose'
+
+[model]
+booster = 'gbtree'
+n_estimators = 2000
+n_jobs = -1
+tree_method = 'hist'
+device = 'cpu'
+early_stopping_rounds = 1999

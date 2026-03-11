@@ -1,0 +1,37 @@
+data_params:
+  data_name: scanb_geo_over_nkbc
+  data_path: /home/avesta/daqu/Projects/GEX/GEX_processed/gex/
+  num_workers: 8
+  train_batch_size: 32
+  val_batch_size: 24
+exp_params:
+  LR: 0.0001
+  manual_seed: 1265
+  scheduler_gamma: 0.999
+  weight_decay: 1.0e-04
+logging_params:
+  save_dir: outputs/
+model_params:
+  decoder: MLP
+  encoder: EncoderTransformer
+  in_dim: 7845
+  d_token: 128
+  token_bias: true
+  n_layers: 1
+  n_heads: 4
+  d_ffn_factor: 1.333333333333333
+  attention_dropout: 0.2
+  ffn_dropout: 0.1
+  residual_dropout: 0.0
+  activation: reglu
+  prenormalization: true
+  initialization: 'kaiming'
+  loss: MSE
+  name: MLM
+  mask_scale: 0.25
+  mask_offset: 0.05
+trainer_params:
+  gpus:
+  - 0
+  - 1
+  max_epochs: 150

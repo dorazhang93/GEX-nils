@@ -1,0 +1,39 @@
+data_params:
+  data_name: case9263_aligned
+  data_path: /home/avesta/daqu/Projects/GEX/GEX_processed/gex/
+  num_workers: 4
+  train_batch_size: 64
+  val_batch_size: 128
+exp_params:
+  LR: 0.0001
+  manual_seed: 1265
+  scheduler_gamma: 0.995
+  weight_decay: 1.0e-04
+logging_params:
+  save_dir: outputs/
+model_params:
+  aux: false
+  decoder: DecoderMLP
+  encoder: EncoderTransformer
+  in_dim: 19675
+  d_token: 128
+  token_bias: true
+  n_layers: 1
+  n_heads: 4
+  d_ffn_factor: 1.333333333333333
+  attention_dropout: 0.2
+  ffn_dropout: 0.1
+  residual_dropout: 0.0
+  activation: reglu
+  prenormalization: true
+  initialization: 'kaiming'
+  latent_dim: 10
+  loss: MSE
+  name: AutoEncoder
+  noise_std: 0.01
+  reg_factor: 1.0e-08
+  sparsify: 0.4
+trainer_params:
+  gpus:
+  - 0
+  max_epochs: 500

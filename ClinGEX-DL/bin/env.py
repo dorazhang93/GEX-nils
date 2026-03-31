@@ -1,8 +1,10 @@
 import os
 from pathlib import Path
 
-PROJECT_DIR = Path('/home/avesta/daqu/Projects/GEX/code/ClinTab-DL/').absolute().resolve()
-DATA_DIR = Path('/home/avesta/daqu/Projects/GEX/GEX_processed/modeling_data').absolute().resolve()
+from pathlib import Path
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent.parent
+DATA_DIR = PROJECT_DIR / 'Data'
 OUTPUT_DIR = PROJECT_DIR / 'output'
 
 

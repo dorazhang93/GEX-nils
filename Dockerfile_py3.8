@@ -1,0 +1,19 @@
+# From GPU on ubuntu system
+FROM python:3.8
+
+# Install PyTorch (CUDA build)
+RUN pip install --upgrade pip
+RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
+
+# Set the working directory
+WORKDIR /GEX-nils
+
+
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["bash", "train.sh"]
